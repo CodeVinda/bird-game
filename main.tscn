@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://cqow47bch5ocs"]
+
+[ext_resource type="Script" uid="uid://dgemna2cprj7k" path="res://player.gd" id="1_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://k4kens0v2piv" path="res://images (6).jpg" id="1_7mycd"]
+[ext_resource type="Texture2D" uid="uid://dd556udfqvlpc" path="res://Heaven Kanpur/images (2).jpg" id="2_h2yge"]
+[ext_resource type="Texture2D" uid="uid://ch3nxxp1v8uaf" path="res://Heaven Kanpur/images (1).jpg" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://d0m6e2hqvdcgr" path="res://berry.tscn" id="4_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://c6gfmfcjr0077" path="res://images (3).jpg" id="5_lquwl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0fgaq"]
+radius = 76.48529
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hul28"]
+radius = 95.257545
+
+[node name="Node2D" type="Node2D" unique_id=1064711977]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=811774589]
+position = Vector2(585.5, 329.49997)
+scale = Vector2(1.6858408, 1.4137169)
+texture = ExtResource("1_7mycd")
+
+[node name="Basket" type="Area2D" parent="." unique_id=455753804 groups=["Basket"]]
+position = Vector2(615, 499)
+
+[node name="Sprite2D" type="Sprite2D" parent="Basket" unique_id=1449750713]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_lquwl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Basket" unique_id=1171343014]
+shape = SubResource("CircleShape2D_0fgaq")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=751407085]
+position = Vector2(405, 195)
+script = ExtResource("1_0xm2m")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=10216958]
+position = Vector2(-8, 2)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_h2yge")
+
+[node name="PickupArea" type="Area2D" parent="Player" unique_id=512288093]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/PickupArea" unique_id=1051583161]
+shape = SubResource("CircleShape2D_hul28")
+
+[node name="HeldBerry" type="Sprite2D" parent="Player" unique_id=1983204634]
+visible = false
+position = Vector2(72, 19.999994)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_h2yge")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Player" unique_id=1916346257]
+
+[node name="BerryCountDisplay" type="Label" parent="Player/CanvasLayer" unique_id=386719024]
+offset_left = 24.0
+offset_top = 20.0
+offset_right = 224.0
+offset_bottom = 60.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+text = "Berry: 0"
+
+[node name="Berry" parent="." unique_id=1896962911 instance=ExtResource("4_1bvp3")]
+position = Vector2(847, 463)
+
+[node name="Berry2" parent="." unique_id=1755255871 instance=ExtResource("4_1bvp3")]
+position = Vector2(345, 487)
+
+[node name="Berry3" parent="." unique_id=475629413 instance=ExtResource("4_1bvp3")]
+position = Vector2(837, 180)
+
+[connection signal="area_entered" from="Player/PickupArea" to="Player" method="_on_pickup_area_area_entered"]
