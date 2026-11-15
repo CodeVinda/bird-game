@@ -1,5 +1,7 @@
 # Bird Game
 
+*This project is made on Godot Engine.*
+
 A tiny top-down 2D game made with **Godot 4.7**. Fly the bird around the scene, scoop up berries, and drop them in the basket. Every berry delivered adds to your count.
 
 ![Godot](https://img.shields.io/badge/Godot-4.7-478cbf?logo=godotengine&logoColor=white)
