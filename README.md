@@ -10,7 +10,7 @@ A tiny top-down 2D game made with **Godot 4.7**. Fly the bird around the scene, 
 ## Gameplay
 
 One berry at a time. Touch a berry to pick it up — the bird carries it visibly. Touch the basket
-while carrying a berry to drop it in and score a point. Three berries are scattered around the level.
+while carrying a berry to drop it in and score a point. Seven berries are scattered around the level.
 
 The whole loop is:
 

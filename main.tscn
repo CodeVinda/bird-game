@@ -71,4 +71,16 @@ position = Vector2(345, 487)
 [node name="Berry3" parent="." unique_id=475629413 instance=ExtResource("4_1bvp3")]
 position = Vector2(837, 180)
 
+[node name="Berry4" parent="." instance=ExtResource("4_1bvp3")]
+position = Vector2(200, 300)
+
+[node name="Berry5" parent="." instance=ExtResource("4_1bvp3")]
+position = Vector2(620, 130)
+
+[node name="Berry6" parent="." instance=ExtResource("4_1bvp3")]
+position = Vector2(1000, 300)
+
+[node name="Berry7" parent="." instance=ExtResource("4_1bvp3")]
+position = Vector2(180, 560)
+
 [connection signal="area_entered" from="Player/PickupArea" to="Player" method="_on_pickup_area_area_entered"]
